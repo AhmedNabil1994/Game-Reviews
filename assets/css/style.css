@@ -1,8 +1,47 @@
 :root {
+  --navlink-active-color: #09c;
 }
 
 /* global classes */
 body {
+  font-family: cursive;
+  background-color: #272b30;
+  /* background-image: url("../images/wraper.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
 }
-
+/* header */
+header img {
+  width: 100%;
+  max-height: 30vh;
+  object-fit: cover;
+}
 /* navbar */
+nav {
+  background-color: #3a497b;
+  .navbar-brand {
+    color: white;
+    cursor: auto;
+    font-weight: 500;
+    &:focus,
+    &:hover {
+      color: white;
+    }
+    img {
+      width: 40px;
+      cursor: inherit;
+    }
+    span {
+      cursor: text;
+    }
+  }
+  .navbar-nav .nav-link {
+    color: white;
+    transition: all 0.5s;
+    &:hover,
+    &.active {
+      color: var(--navlink-active-color);
+    }
+  }
+}
