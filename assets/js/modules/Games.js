@@ -3,6 +3,7 @@
 import UI from "./Ui.js";
 
 // Global DOM elements
+const spinner = document.getElementById("loading-spinner");
 // Glabal Variables
 
 export default class Games {
@@ -28,12 +29,15 @@ export default class Games {
       },
     };
     try {
+      spinner.classList.remove("d-none");
       const response = await fetch(url, options);
       const data = await response.json();
       console.log(data, "data");
       this.ui.displayGames(data);
     } catch (error) {
       console.log(error);
+    } finally {
+      spinner.classList.add("d-none");
     }
   }
 }
