@@ -1,11 +1,7 @@
 "use strict";
-
-// import Home from "./home.module.js";
-// const out = new Home();
-// console.log(out, "out");
-
 // Global DOM elements
 const cardsContainer = document.querySelector("#games .row");
+
 export default class UI {
   displayGames(arr) {
     console.log(arr, "array in ui class");
@@ -47,7 +43,3 @@ export default class UI {
   }
 }
 
-// new UI().displayGames();
-// obj.displayGameDetails();
-// const home = new Home();
-// const gamesData = await home.fetchGamesByCategory("mmorpg");

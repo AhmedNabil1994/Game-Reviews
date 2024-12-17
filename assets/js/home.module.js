@@ -1,5 +1,5 @@
 "use strict";
-
+// imports
 import UI from "./ui.module.js";
 
 // Global DOM elements
@@ -30,4 +30,3 @@ export default class Home {
   }
 }
 
-// export const arr = await new Home().fetchGamesByCategory();
