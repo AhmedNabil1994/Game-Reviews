@@ -1,6 +1,6 @@
 "use strict";
 // imports
-import UI from "./ui.module.js";
+import UI from "./Ui.js";
 
 // Global DOM elements
 // Glabal Variables
@@ -13,7 +13,7 @@ export default class Games {
       link.addEventListener("click", (e) => {
         document.querySelector("a.nav-link.active").classList.remove("active");
         e.target.classList.add("active");
-        this.fetchGamesByCategory(e.target.dataset.category)
+        this.fetchGamesByCategory(e.target.dataset.category);
       });
     });
   }

@@ -1,4 +1,4 @@
 // imports
-import Games from "./games.module.js";
+import Games from "./modules/Games.js";
 
 new Games();
