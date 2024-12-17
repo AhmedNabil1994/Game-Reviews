@@ -4,14 +4,16 @@ import UI from "./ui.module.js";
 
 // Global DOM elements
 // Glabal Variables
-export default class Home {
+
+export default class Games {
   constructor() {
     this.fetchGamesByCategory("mmorpg");
-    this.homeUI = new UI();
+    this.ui = new UI();
     document.querySelectorAll("a.nav-link").forEach((link) => {
       link.addEventListener("click", (e) => {
         document.querySelector("a.nav-link.active").classList.remove("active");
         e.target.classList.add("active");
+        this.fetchGamesByCategory(e.target.dataset.category)
       });
     });
   }
@@ -29,7 +31,7 @@ export default class Home {
       const response = await fetch(url, options);
       const data = await response.json();
       console.log(data, "data");
-      this.homeUI.displayGames(data);
+      this.ui.displayGames(data);
     } catch (error) {
       console.log(error);
     }

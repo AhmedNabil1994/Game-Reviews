@@ -1,4 +1,4 @@
 // imports
-import Home from "./home.module.js";
+import Games from "./games.module.js";
 
-new Home();
+new Games();
