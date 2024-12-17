@@ -34,6 +34,7 @@ export default class Games {
       const data = await response.json();
       console.log(data, "data");
       this.ui.displayGames(data);
+      // this.ui.displayGameDetails();
     } catch (error) {
       console.log(error);
     } finally {
