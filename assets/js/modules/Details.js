@@ -6,14 +6,14 @@ import UI from "./Ui.js";
 const spinner = document.getElementById("loading-spinner");
 
 export default class Details {
-  constructor(id) {
+  constructor(gameId) {
     this.ui = new UI();
     // event
     document.querySelector("button.btn-close").addEventListener("click", () => {
       document.getElementById("game-details").classList.add("d-none");
       document.getElementById("home").classList.remove("d-none");
     });
-    // this.fetchGameById(id);
+    this.fetchGameById(gameId);
   }
   async fetchGameById(id) {
     const url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`;

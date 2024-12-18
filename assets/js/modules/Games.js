@@ -48,8 +48,7 @@ export default class Games {
       if (e.target.closest(".card")) {
         document.getElementById("home").classList.add("d-none");
         document.getElementById("game-details").classList.remove("d-none");
-        const gameDetails = new Details();
-        gameDetails.fetchGameById(e.target.closest(".card").dataset.id)
+        const gameDetails = new Details(e.target.closest(".card").dataset.id);
       }
     });
   }
