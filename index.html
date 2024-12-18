@@ -21,7 +21,7 @@
   </head>
   <body>
     <main>
-      <section id="home">
+      <section id="home" >
         <header>
           <img src="./assets/images/wraper.png" alt="header-bg" />
         </header>
@@ -83,8 +83,24 @@
           </div>
         </nav>
         <section class="games mt-5" id="games">
+          <div class="col-md-6 col-lg-8 mx-auto">
+            <div class="mb-3 position-relative px-2 px-sm-0">
+              <input
+                id="search"
+                type="search"
+                class="form-control rounded-5"
+                placeholder="Search by title..."
+                aria-label="An input field to search"
+                aria-describedby="basic-addon2"
+              />
+              <i class="fa fa-solid fa-search"></i>
+            </div>
+            <p class="text-danger text-center d-none no-games-msg">
+              No games found for your search. Try a different title.
+            </p>
+          </div>
           <div class="container">
-            <div class="row g-4"></div>
+            <div class="row g-4 cards"></div>
           </div>
         </section>
       </section>
@@ -102,6 +118,8 @@
       <section id="loading-spinner" class="d-none">
         <span class="loader"></span>
       </section>
+
+     
     </main>
     <!-- bootstrap js -->
     <script src="./assets/js/bootstrap.bundle.min.js"></script>

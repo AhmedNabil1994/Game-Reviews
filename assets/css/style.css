@@ -70,6 +70,46 @@ section#games {
     }
   }
 }
+section.games {
+  .card {
+    background-color: transparent;
+    filter: grayscale(0.7);
+    transition: all 0.5s;
+    cursor: pointer;
+    figcaption {
+      color: white;
+      h5,
+      .card-text {
+        font-size: 0.875rem;
+      }
+    }
+    footer.card-footer span {
+      font-size: 0.6875rem;
+      background-color: var(--card-footer-bg-color);
+    }
+    &:hover {
+      filter: grayscale(0);
+      transform: scale(1.05);
+    }
+  }
+  .card.filtered {
+    .card-body {
+      h5,
+      .card-text {
+        color: white;
+        font-size: 0.875rem;
+      }
+    }
+    footer.card-footer span {
+      font-size: 0.6875rem;
+      background-color: var(--card-footer-bg-color);
+    }
+    &:hover {
+      filter: grayscale(0);
+      transform: scale(1.05);
+    }
+  }
+}
 /* each game */
 section#game-details {
   h1,
@@ -139,4 +179,20 @@ section#loading-spinner {
 }
 ::-webkit-scrollbar-track {
   background-color: var(--card-footer-bg-color);
+}
+/* search icon */
+.fa-search {
+  position: absolute;
+  color: var(--body-bg-color) !important;
+  padding: 0.625rem 1.25rem;
+  top: 0;
+  right: 2.1875rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+ /* x icon in type search */
+ input[type="search"]::-webkit-search-cancel-button {
+  cursor: pointer;
+  font-size: 1.25rem;
 }

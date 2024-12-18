@@ -2,6 +2,7 @@
 // imports
 import UI from "./Ui.js";
 import Details from "./Details.js";
+import SearchGames from "./Search-Games.js";
 
 // Global DOM elements
 const spinner = document.getElementById("loading-spinner");
@@ -32,8 +33,9 @@ export default class Games {
       spinner.classList.remove("d-none");
       const response = await fetch(url, options);
       const data = await response.json();
-      // console.log(data, "data");
+      console.log(data, "data");
       this.ui.displayGames(data);
+      const gamesToSearch = new SearchGames(data);
       this.gameDetails();
     } catch (error) {
       console.log(error);
