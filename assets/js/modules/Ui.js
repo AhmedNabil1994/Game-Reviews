@@ -7,7 +7,7 @@ export default class UI {
     let cards = "";
     for (let i = 0; i < arr.length; i++) {
       cards += `  <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card h-100">
+            <div class="card h-100" data-id = ${arr[i].id}>
               <div class="card-body">
                 <figure>
                   <img

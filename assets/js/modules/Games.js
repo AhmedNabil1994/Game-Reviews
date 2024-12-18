@@ -34,11 +34,23 @@ export default class Games {
       const data = await response.json();
       console.log(data, "data");
       this.ui.displayGames(data);
-      // this.ui.displayGameDetails();
+      this.gameDetails();
     } catch (error) {
       console.log(error);
     } finally {
       spinner.classList.add("d-none");
     }
+  }
+  gameDetails() {
+    // using event delegation for better performance
+    document.querySelector("#games .row").addEventListener("click", (e) => {
+      // looking for the card using closest method
+      e.target.closest(".card") && console.log("inside card or itself");
+      if (e.target.closest(".card")) {
+        this.ui.displayGameDetails();
+        document.getElementById("home").classList.add("d-none");
+        document.getElementById("game-details").classList.remove("d-none");
+      }
+    });
   }
 }
