@@ -20,7 +20,6 @@ export default class Games {
     });
   }
   async fetchGamesByCategory(cat) {
-    console.log(cat, "cat");
     const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${cat}`;
     const options = {
       method: "GET",
@@ -33,7 +32,7 @@ export default class Games {
       spinner.classList.remove("d-none");
       const response = await fetch(url, options);
       const data = await response.json();
-      console.log(data, "data");
+      // console.log(data, "data");
       this.ui.displayGames(data);
       this.gameDetails();
     } catch (error) {
@@ -46,12 +45,11 @@ export default class Games {
     // using event delegation for better performance
     document.querySelector("#games .row").addEventListener("click", (e) => {
       // looking for the card using closest method
-      e.target.closest(".card") && console.log("inside card or itself");
       if (e.target.closest(".card")) {
         document.getElementById("home").classList.add("d-none");
         document.getElementById("game-details").classList.remove("d-none");
-        this.ui.displayGameDetails();
         const gameDetails = new Details();
+        gameDetails.fetchGameById(e.target.closest(".card").dataset.id)
       }
     });
   }
