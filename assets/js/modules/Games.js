@@ -1,15 +1,16 @@
 "use strict";
 // imports
 import UI from "./Ui.js";
+import Details from "./Details.js";
 
 // Global DOM elements
 const spinner = document.getElementById("loading-spinner");
-// Glabal Variables
 
 export default class Games {
   constructor() {
     this.fetchGamesByCategory("mmorpg");
     this.ui = new UI();
+    // event
     document.querySelectorAll("a.nav-link").forEach((link) => {
       link.addEventListener("click", (e) => {
         document.querySelector("a.nav-link.active").classList.remove("active");
@@ -47,9 +48,10 @@ export default class Games {
       // looking for the card using closest method
       e.target.closest(".card") && console.log("inside card or itself");
       if (e.target.closest(".card")) {
-        this.ui.displayGameDetails();
         document.getElementById("home").classList.add("d-none");
         document.getElementById("game-details").classList.remove("d-none");
+        this.ui.displayGameDetails();
+        const gameDetails = new Details();
       }
     });
   }

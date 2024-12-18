@@ -1,5 +1,4 @@
 "use strict";
-// Global DOM elements
 
 export default class UI {
   displayGames(arr) {
