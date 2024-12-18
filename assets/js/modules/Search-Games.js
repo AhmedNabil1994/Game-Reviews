@@ -22,6 +22,5 @@ export default class SearchGames {
     filteredGames.length === 0
       ? document.querySelector(".no-games-msg").classList.remove("d-none")
       : document.querySelector(".no-games-msg").classList.add("d-none");
-    //   searchInput.value = ""
   }
 }

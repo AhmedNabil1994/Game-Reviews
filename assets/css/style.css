@@ -47,30 +47,8 @@ nav {
   }
 }
 /* all games */
+
 section#games {
-  .card {
-    background-color: transparent;
-    filter: grayscale(0.7);
-    transition: all 0.5s;
-    cursor: pointer;
-    figcaption {
-      color: white;
-      h5,
-      .card-text {
-        font-size: 0.875rem;
-      }
-    }
-    footer.card-footer span {
-      font-size: 0.6875rem;
-      background-color: var(--card-footer-bg-color);
-    }
-    &:hover {
-      filter: grayscale(0);
-      transform: scale(1.05);
-    }
-  }
-}
-section.games {
   .card {
     background-color: transparent;
     filter: grayscale(0.7);
