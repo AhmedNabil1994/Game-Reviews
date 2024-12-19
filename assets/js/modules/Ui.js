@@ -62,6 +62,7 @@ export default class UI {
     }
     document.querySelector("#games .row.cards").innerHTML = cards;
   }
+
   displayGameDetails(data) {
     const gameDetails = ` <div class="col-md-5 col-lg-4">
             <picture>

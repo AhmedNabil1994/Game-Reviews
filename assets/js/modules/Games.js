@@ -33,7 +33,7 @@ export default class Games {
       spinner.classList.remove("d-none");
       const response = await fetch(url, options);
       const data = await response.json();
-      console.log(data, "data");
+      // console.log(data, "data");
       this.ui.displayGames(data);
       const gamesToSearch = new SearchGames(data);
       this.gameDetails();

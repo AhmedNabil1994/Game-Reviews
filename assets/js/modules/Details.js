@@ -28,7 +28,7 @@ export default class Details {
       spinner.classList.remove("d-none");
       const response = await fetch(url, options);
       const data = await response.json();
-      console.log(data, "game details");
+      // console.log(data, "game details");
       this.ui.displayGameDetails(data);
     } catch (error) {
       console.log(error);

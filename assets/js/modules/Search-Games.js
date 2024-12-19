@@ -7,6 +7,7 @@ const searchInput = document.getElementById("search");
 
 export default class SearchGames {
   constructor(games) {
+    // console.log("SearchGames initialized");
     this.ui = new UI();
     // event
     document.querySelector(".fa-search").addEventListener("click", () => {
@@ -17,7 +18,7 @@ export default class SearchGames {
     const filteredGames = games.filter((game) =>
       game.title.toLowerCase().includes(searchInput.value.trim().toLowerCase())
     );
-    console.log(filteredGames, "filteredGames");
+    // console.log(filteredGames, "filteredGames");
     this.ui.displayGames(filteredGames);
     filteredGames.length === 0
       ? document.querySelector(".no-games-msg").classList.remove("d-none")
